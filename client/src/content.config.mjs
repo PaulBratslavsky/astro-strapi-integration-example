@@ -12,6 +12,21 @@ const strapiPostsLoader = defineCollection({
         blocks: {
           on: {
             "shared.quote": true,
+            "shared.rich-text": true,
+            "shared.media": {
+              populate: {
+                file: {
+                  fields: ["url", "alternativeText"],
+                }
+              }
+            },
+            "shared.slider": {
+              populate: {
+                files: {
+                  fields: ["url", "alternativeText"],
+                }
+              }
+            }
           },
         },
       },
